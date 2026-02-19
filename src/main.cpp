@@ -17,7 +17,7 @@ M5GFX& display = M5.Display;
 
 
 // Variables
-int lineHeight = 24;
+int lineHeight = display.fontHeight() + 14;;
 int x_margin = 25; 
 int y_header = 25;
 int x = x_margin;
@@ -79,13 +79,13 @@ const char* boardToString(m5::board_t board)
 void scanBus(m5::I2C_Class& bus, const char* busName)
 {
   display.setCursor(x,y);
-  display.printf("Scanning %s...", busName);
+  display.printf("Scanning %s: ", busName);
   int found = 0;
    for (uint8_t addr = 0x08; addr <= 0x77; addr++)
   {
     if (bus.scanID(addr))
     {
-      display.printf("  0x%02X", addr);
+      display.printf("0x%02X ", addr);
       found++;
     }
   }
@@ -128,9 +128,6 @@ void setup()
   display.setTextSize(textSize);
   display.setCursor(x, y);
   display.printf("Development Board: %s\n", boardToString(board));
-  y += lineHeight;
-  display.setCursor(x, y);
-  display.printf("LCD Panel: %s\n", panel ? "Detected" : "Unknown");
   y += lineHeight;
   display.setCursor(x, y);
   display.printf("LCD Controller: %s\n", controller);
