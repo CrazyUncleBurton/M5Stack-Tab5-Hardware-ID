@@ -66,11 +66,11 @@ const char* boardToString(m5::board_t board)
 {
   switch (board)
   {
-    case m5::board_t::board_M5Tab5: return "M5Tab5";
+    case m5::board_t::board_M5Tab5: return "M5Stack Tab5";
     case m5::board_t::board_M5Stack: return "M5Stack";
-    case m5::board_t::board_M5StackCore2: return "M5StackCore2";
-    case m5::board_t::board_M5StackCoreS3: return "M5StackCoreS3";
-    case m5::board_t::board_M5StackCoreS3SE: return "M5StackCoreS3SE";
+    case m5::board_t::board_M5StackCore2: return "M5Stack Core2";
+    case m5::board_t::board_M5StackCoreS3: return "M5Stack CoreS3";
+    case m5::board_t::board_M5StackCoreS3SE: return "M5Stack CoreS3SE";
     default: return "Unknown";
   }
 }
